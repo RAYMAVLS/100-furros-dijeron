@@ -1,0 +1,200 @@
+media:
+  - name: spreadsheets
+    label: Excels semanales
+    input: uploads
+    output: /uploads
+    extensions: [xlsx]
+    categories: [spreadsheet]
+    rename: false
+
+actions:
+  - name: process-weekly-excel
+    label: Procesar Excel semanal
+    workflow: import-excel.yml
+    ref: current
+    confirm:
+      title: ¿Procesar el Excel?
+      message: Se reemplazará content/questions.json con los resultados del archivo seleccionado.
+      button: Procesar
+
+content:
+  - name: settings
+    label: Configuración del programa
+    type: file
+    path: content/settings.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: showTitle
+        label: Nombre del programa
+        type: string
+        required: true
+
+      - name: subtitle
+        label: Subtítulo
+        type: string
+
+      - name: weekLabel
+        label: Semana predeterminada
+        type: string
+
+      - name: defaultRoomCode
+        label: Código de sala
+        type: string
+        required: true
+
+      - name: minPlayers
+        label: Mínimo de personas
+        type: number
+        default: 4
+
+      - name: maxTeams
+        label: Máximo de equipos
+        type: number
+        default: 6
+
+      - name: answersPerBoard
+        label: Respuestas máximas por pregunta
+        type: number
+        default: 8
+
+      - name: registrationOpenByDefault
+        label: Abrir registro al crear sala
+        type: boolean
+        default: true
+
+  - name: import
+    label: Importación semanal
+    type: file
+    path: content/import-settings.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: sourceFile
+        label: Excel de Microsoft Forms
+        type: file
+        required: true
+        options:
+          media: spreadsheets
+          extensions: [xlsx]
+          rename: false
+
+      - name: weekLabel
+        label: Nombre de la semana
+        type: string
+        required: true
+
+      - name: topAnswers
+        label: Respuestas mostradas por pregunta
+        type: number
+        default: 8
+
+      - name: ignoredColumns
+        label: Columnas que no son preguntas
+        type: string
+        list: true
+
+      - name: aliases
+        label: Respuestas equivalentes
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{canonical} — {question}"
+        fields:
+          - name: question
+            label: Pregunta exacta del formulario
+            type: string
+            required: true
+
+          - name: canonical
+            label: Respuesta que aparecerá
+            type: string
+            required: true
+
+          - name: variants
+            label: Variantes que se agrupan
+            type: string
+            list: true
+
+  - name: questions
+    label: Preguntas procesadas
+    type: file
+    path: content/questions.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: weekLabel
+        label: Semana
+        type: string
+
+      - name: respondentCount
+        label: Número de participantes de la encuesta
+        type: number
+
+      - name: generatedAt
+        label: Fecha de generación
+        type: string
+        readonly: true
+
+      - name: questions
+        label: Preguntas
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {text}"
+        fields:
+          - name: id
+            label: ID
+            type: string
+            required: true
+
+          - name: enabled
+            label: Pregunta activa
+            type: boolean
+            default: true
+
+          - name: text
+            label: Pregunta
+            type: text
+            required: true
+
+          - name: multiplier
+            label: Multiplicador
+            type: select
+            default: 1
+            options:
+              values:
+                - name: 1
+                  label: Normal
+                - name: 2
+                  label: Doble
+                - name: 3
+                  label: Triple
+
+          - name: answers
+            label: Respuestas
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{index}. {text} — {points} puntos"
+            fields:
+              - name: text
+                label: Respuesta
+                type: string
+                required: true
+
+              - name: points
+                label: Puntos
+                type: number
+                required: true
+
+settings:
+  hide: true
+  content:
+    merge: true

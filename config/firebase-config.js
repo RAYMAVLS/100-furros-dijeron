@@ -1,11 +1,9 @@
-// Reemplaza estos valores con los de tu aplicación web de Firebase.
-// Firebase Console → Configuración del proyecto → Tus apps → Web.
 export const firebaseConfig = {
-  apiKey: "PEGA_AQUI_TU_API_KEY",
-  authDomain: "PEGA_AQUI.firebaseapp.com",
-  databaseURL: "https://PEGA_AQUI-default-rtdb.firebaseio.com",
-  projectId: "PEGA_AQUI",
-  storageBucket: "PEGA_AQUI.firebasestorage.app",
-  messagingSenderId: "PEGA_AQUI",
-  appId: "PEGA_AQUI"
+  apiKey: "AIzaSyBdiinWeDPrOFlLEM52M2ijYZr595-leow",
+  authDomain: "furros-dijeron.firebaseapp.com",
+  databaseURL: "PEGA_AQUÍ_LA_URL_DE_REALTIME_DATABASE",
+  projectId: "furros-dijeron",
+  storageBucket: "furros-dijeron.firebasestorage.app",
+  messagingSenderId: "902025051624",
+  appId: "1:902025051624:web:d64e6719c48ee379fb785d"
 };

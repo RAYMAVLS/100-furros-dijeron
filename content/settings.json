@@ -3,8 +3,8 @@
   "subtitle": "Los resultados hablan por sí solos",
   "weekLabel": "Semana 01",
   "defaultRoomCode": "FURROS",
-  "minPlayers": 4,
+  "minPlayers": 2,
   "maxTeams": 6,
-  "answersPerBoard": 8,
+  "answersPerBoard": 10,
   "registrationOpenByDefault": true
 }

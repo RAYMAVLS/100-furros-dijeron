@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071020">
+  <title>Entrar · 100 Furros Dijeron</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <main class="portal-shell">
+    <header class="portal-header">
+      <a href="./" class="brand-link">100 Furros Dijeron</a>
+      <span id="playerStatus" class="status-pill">DESCONECTADO</span>
+    </header>
+
+    <section id="joinPanel" class="panel narrow-panel">
+      <p class="eyebrow">ENTRAR A LA PARTIDA</p>
+      <h1>Tu nombre va primero.</h1>
+      <label class="field-label" for="roomInput">Código de sala</label>
+      <input id="roomInput" class="text-input" maxlength="12" value="FURROS" autocomplete="off">
+      <label class="field-label" for="nameInput">Nombre</label>
+      <input id="nameInput" class="text-input" maxlength="32" placeholder="Frosty" autocomplete="name">
+      <button id="joinButton" class="primary-button" type="button">ENTRAR</button>
+      <p id="joinMessage" class="form-message" aria-live="polite"></p>
+    </section>
+
+    <section id="playerPanel" class="panel" hidden aria-live="polite"></section>
+  </main>
+  <script type="module" src="./assets/js/player.js?v=1"></script>
+</body>
+</html>

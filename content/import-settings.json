@@ -1,0 +1,35 @@
+{
+  "sourceFile": "/uploads/respuestas.xlsx",
+  "weekLabel": "Semana 01",
+  "topAnswers": 8,
+  "ignoredColumns": [
+    "ID",
+    "Start time",
+    "Completion time",
+    "Email",
+    "Name",
+    "Nombre",
+    "Last modified time"
+  ],
+  "aliases": [
+    {
+      "question": "Menciona una especie muy común de fursona.",
+      "canonical": "Lobo",
+      "variants": [
+        "lobo",
+        "lobos",
+        "wolf"
+      ]
+    },
+    {
+      "question": "Algo que un furro lleva a una convención.",
+      "canonical": "Fursuit",
+      "variants": [
+        "fursuit",
+        "traje furry",
+        "traje",
+        "suit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "weekLabel": "Semana 01",
+  "respondentCount": 10,
+  "generatedAt": "2026-08-05T21:39:12.717683+00:00",
+  "questions": [
+    {
+      "id": "q1",
+      "enabled": true,
+      "text": "Menciona una especie muy común de fursona.",
+      "multiplier": 1,
+      "answers": [
+        {
+          "text": "Lobo",
+          "points": 4
+        },
+        {
+          "text": "Zorro",
+          "points": 2
+        },
+        {
+          "text": "Gato",
+          "points": 1
+        },
+        {
+          "text": "Perro",
+          "points": 1
+        },
+        {
+          "text": "Dragón",
+          "points": 1
+        },
+        {
+          "text": "Tigre",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "enabled": true,
+      "text": "Algo que un furro lleva a una convención.",
+      "multiplier": 1,
+      "answers": [
+        {
+          "text": "Fursuit",
+          "points": 4
+        },
+        {
+          "text": "Badge",
+          "points": 2
+        },
+        {
+          "text": "Dinero",
+          "points": 1
+        },
+        {
+          "text": "Agua",
+          "points": 1
+        },
+        {
+          "text": "Arte",
+          "points": 1
+        },
+        {
+          "text": "Desodorante",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "enabled": true,
+      "text": "¿Qué hace un furro cuando ve comisiones abiertas?",
+      "multiplier": 1,
+      "answers": [
+        {
+          "text": "Pide una comisión",
+          "points": 3
+        },
+        {
+          "text": "Revisa precios",
+          "points": 3
+        },
+        {
+          "text": "Dice que no tiene dinero",
+          "points": 2
+        },
+        {
+          "text": "Etiqueta a sus amigos",
+          "points": 2
+        }
+      ]
+    }
+  ]
+}

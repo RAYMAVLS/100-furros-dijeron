@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071020">
+  <title>Control · 100 Furros Dijeron</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <main class="control-shell">
+    <header class="portal-header">
+      <a href="./" class="brand-link">Cabina de control</a>
+      <span id="adminStatus" class="status-pill">SIN SESIÓN</span>
+    </header>
+
+    <section id="loginPanel" class="panel narrow-panel">
+      <p class="eyebrow">ORGANIZADOR</p>
+      <h1>Acceso a producción</h1>
+      <label class="field-label" for="emailInput">Correo de Firebase</label>
+      <input id="emailInput" class="text-input" type="email" autocomplete="username">
+      <label class="field-label" for="passwordInput">Contraseña</label>
+      <input id="passwordInput" class="text-input" type="password" autocomplete="current-password">
+      <button id="loginButton" class="primary-button" type="button">INICIAR SESIÓN</button>
+      <p id="loginMessage" class="form-message" aria-live="polite"></p>
+    </section>
+
+    <section id="controlPanel" hidden>
+      <div class="control-topbar panel">
+        <label class="compact-field">Sala
+          <input id="controlRoomInput" class="text-input" maxlength="12" value="FURROS">
+        </label>
+        <button id="loadRoomButton" class="secondary-button" type="button">CARGAR</button>
+        <button id="createRoomButton" class="primary-button" type="button">CREAR / REINICIAR SALA</button>
+        <button id="logoutButton" class="ghost-button" type="button">SALIR</button>
+      </div>
+
+      <div class="control-grid">
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">PARTICIPANTES</p>
+              <h2 id="playerCount">0 personas</h2>
+            </div>
+            <button id="toggleRegistrationButton" class="secondary-button" type="button">CERRAR REGISTRO</button>
+          </div>
+          <div id="adminPlayers" class="people-list"></div>
+          <div class="button-row">
+            <button id="makeTeamsButton" class="primary-button" type="button">SORTEAR CAPITANES Y EQUIPOS</button>
+            <button id="startDraftButton" class="secondary-button" type="button">INICIAR DRAFT</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">EQUIPOS</p>
+              <h2>Estado del draft</h2>
+            </div>
+          </div>
+          <div id="adminTeams" class="team-grid"></div>
+          <div id="draftStatus" class="notice"></div>
+          <div class="button-row">
+            <button id="startGameButton" class="primary-button" type="button">INICIAR CONCURSO</button>
+          </div>
+        </section>
+
+        <section class="panel wide-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TABLERO</p>
+              <h2 id="adminQuestionTitle">Pregunta</h2>
+            </div>
+            <div class="button-row compact-row">
+              <button id="previousQuestionButton" class="ghost-button" type="button">←</button>
+              <button id="nextQuestionButton" class="ghost-button" type="button">→</button>
+            </div>
+          </div>
+          <div id="adminAnswers" class="admin-answer-list"></div>
+          <div class="game-controls">
+            <button id="strikeButton" class="danger-button" type="button">ERROR ✕</button>
+            <button id="clearStrikesButton" class="secondary-button" type="button">LIMPIAR ERRORES</button>
+            <select id="activeTeamSelect" class="text-input"></select>
+            <button id="awardPointsButton" class="primary-button" type="button">DAR PUNTOS DE LA RONDA</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./assets/js/control.js?v=1"></script>
+</body>
+</html>
